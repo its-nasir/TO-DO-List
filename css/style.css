@@ -1,0 +1,15 @@
+.nav {
+  display: flex;
+  justify-content: center;
+  border-radius: 5rem;
+  margin: 2rem 40rem;
+  padding: 10rem 10rem;
+  background-color: #eaedef;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.st1 {
+  margin: 2rem;
+}
+body {
+  background-color: rgb(233, 214, 214);
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="./css/style.css">
+<link rel="icon" type="image/png" sizes="32x32" href="./img/icon.jpg">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Students Form</title>
+    <meta name="title" content="Students Form">
+    <meta name="description" content="In this form we are using javascript/Html/CSS with local,session,cookie storage.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://metatags.io/">
+    <meta property="og:title" content="Students Form">
+    <meta property="og:description"
+        content="In this form we are using javascript/Html/CSS with local,session,cookie storage.">
+    <meta property="og:image" content="https://i.postimg.cc/SJy1tNxr/icon.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://metatags.io/">
+    <meta property="twitter:title" content="Students Form">
+    <meta property="twitter:description"
+        content="In this form we are using javascript/Html/CSS with local,session,cookie storage.">
+    <meta property="twitter:image" content="https://i.postimg.cc/SJy1tNxr/icon.jpg">
+    <title>Form Page</title>
+</head>
+
+<body>
+    <main class="nav">
+        <form onsubmit="nav(event)">
+            <table>
+                <tr>
+                    <td>Name :</td>
+                    <td><input id="name" type="text"></td>
+                </tr>
+                <tr>
+                    <td>RollNO. :</td>
+                    <td><input id="roll" type="number"></td>
+                </tr>
+                <tr>
+                    <td>Subject :</td>
+                    <td><input id="subj" type="subject"></td>
+                </tr>
+                <tr>
+                    <td>Stroage :</td>
+                    <td>
+                        <select>
+                            <option value="local storage">Local stroage</option>
+                            <option>Cookie Stroage</option>
+                            <option>Session Stroage</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input id="entry" type="submit" value="Submit"></td>
+                </tr>
+            </table>
+        </form>
+    </main>
+
+    <table id="display"
+        style="margin-left: 48rem;  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); ">
+        <tr>
+            <th style="padding: 2rem 2rem;">Name</th>
+            <th style="padding: 0 2rem">RollNO</th>
+            <th style="padding: 0 2rem;">Subject</th>
+        </tr>
+    </table>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
