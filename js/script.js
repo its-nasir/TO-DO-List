@@ -62,31 +62,9 @@ if (window.sessionStorage.length > 1) {
   //   });
 }
 
-// if (document.cookie) {
-//   table.style.display = "block";
-//   for (let i of JSON.parse(document.cookie.split("=")[1])) {
-//     console.log(i);
-//     var newRow = display.insertRow(step);
-//     var cell1 = newRow.insertCell(0);
-//     var cell2 = newRow.insertCell(1);
-//     var cell3 = newRow.insertCell(2);
-//     var cell4 = newRow.insertCell(3);
-
-//     cell1.innerHTML = i["Name"];
-//     cell2.innerHTML = i["roll"];
-//     cell3.innerHTML = i["subject"];
-//     cell4.innerHTML = i["Storage"];
-//     step++;
-//   }
-//   //   });
-// }
-
-if (document.cookie.length > 1) {
-  //   ent.addEventListener("click", () => {
-  //   if ((table.style.display = "none")) {
+if (document.cookie) {
   table.style.display = "block";
-  //   var display = document.getElementById("display");
-  for (let i of JSON.parse(document.cookie.getItem("data"))) {
+  for (let i of JSON.parse(document.cookie.split("=")[1])) {
     console.log(i);
     var newRow = display.insertRow(step);
     var cell1 = newRow.insertCell(0);
@@ -102,6 +80,28 @@ if (document.cookie.length > 1) {
   }
   //   });
 }
+
+// if (document.cookie.length > 1) {
+//   //   ent.addEventListener("click", () => {
+//   //   if ((table.style.display = "none")) {
+//   table.style.display = "block";
+//   //   var display = document.getElementById("display");
+//   for (let i of JSON.parse(document.cookie.getItem("data"))) {
+//     console.log(i);
+//     var newRow = display.insertRow(step);
+//     var cell1 = newRow.insertCell(0);
+//     var cell2 = newRow.insertCell(1);
+//     var cell3 = newRow.insertCell(2);
+//     var cell4 = newRow.insertCell(3);
+
+//     cell1.innerHTML = i["Name"];
+//     cell2.innerHTML = i["roll"];
+//     cell3.innerHTML = i["subject"];
+//     cell4.innerHTML = i["Storage"];
+//     step++;
+//   }
+//   //   });
+// }
 
 var entry = document.getElementById("entry");
 entry.addEventListener("click", displayDetails);
@@ -156,7 +156,7 @@ function displayDetails(e) {
   // all about sessionStorage
   if (sel[0].innerText == "Session Storage") {
     if (window.sessionStorage.length > 1) {
-      allDataS = JSON.parse(localStorage.getItem("data"));
+      allDataS = JSON.parse(sessionStorage.getItem("data"));
     }
     allDataS.push({
       Name,
@@ -194,4 +194,5 @@ function displayDetails(e) {
   cell3.innerHTML = subj;
   cell4.innerHTML = sel;
   step++;
+  location.reload();
 }
