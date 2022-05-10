@@ -62,9 +62,31 @@ if (window.sessionStorage.length > 1) {
   //   });
 }
 
-if (document.cookie) {
+// if (document.cookie) {
+//   table.style.display = "block";
+//   for (let i of JSON.parse(document.cookie.split("=")[1])) {
+//     console.log(i);
+//     var newRow = display.insertRow(step);
+//     var cell1 = newRow.insertCell(0);
+//     var cell2 = newRow.insertCell(1);
+//     var cell3 = newRow.insertCell(2);
+//     var cell4 = newRow.insertCell(3);
+
+//     cell1.innerHTML = i["Name"];
+//     cell2.innerHTML = i["roll"];
+//     cell3.innerHTML = i["subject"];
+//     cell4.innerHTML = i["Storage"];
+//     step++;
+//   }
+//   //   });
+// }
+
+if (document.cookie.length > 1) {
+  //   ent.addEventListener("click", () => {
+  //   if ((table.style.display = "none")) {
   table.style.display = "block";
-  for (let i of JSON.parse(document.cookie.split("=")[1])) {
+  //   var display = document.getElementById("display");
+  for (let i of JSON.parse(document.cookie.getItem("data"))) {
     console.log(i);
     var newRow = display.insertRow(step);
     var cell1 = newRow.insertCell(0);
