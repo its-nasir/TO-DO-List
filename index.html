@@ -32,6 +32,11 @@
 </head>
 
 <body>
+    <header id="hdr">
+        <div id="gurukul">
+            <h2>Navgurkul Addmission form</h2>
+        </div>
+    </header>
     <main class="nav">
         <form onsubmit="nav(event)">
             <table>
@@ -48,12 +53,12 @@
                     <td><input id="subj" type="subject"></td>
                 </tr>
                 <tr>
-                    <td>Stroage :</td>
+                    <td id="storage1">Stroage:</td>
                     <td>
                         <select>
-                            <option value="local storage">Local stroage</option>
-                            <option>Cookie Stroage</option>
-                            <option>Session Stroage</option>
+                            <option id="touch1" value="local storage">Local storage</option>
+                            <option id="touch2">Cookie Storage</option>
+                            <option id="touch3">Session Storage</option>
                         </select>
                     </td>
                 </tr>
@@ -64,15 +69,18 @@
         </form>
     </main>
 
-    <table id="display"
-        style="margin-left: 48rem;  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); ">
-        <tr>
-            <th style="padding: 2rem 2rem;">Name</th>
+    <table id="display">
+        <tr id="fortop">
+            <th id="user" style="padding: 2rem 2rem;">Name</th>
             <th style="padding: 0 2rem">RollNO</th>
             <th style="padding: 0 2rem;">Subject</th>
+            <th style="padding: 0 2rem;">Storage</th>
         </tr>
     </table>
+
+
     <script src="./js/script.js"></script>
+    <!-- <script src="./js/extra.js"></script> -->
 </body>
 
 </html>

@@ -2,9 +2,10 @@
   display: flex;
   justify-content: center;
   border-radius: 5rem;
-  margin: 2rem 40rem;
-  padding: 10rem 10rem;
-  background-color: #eaedef;
+  margin: 3rem 65rem;
+  padding: 20rem 20rem 20rem 20rem;
+  /* background-color: #eaedef; */
+  background-image: url("/img/b1.jpg");
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .st1 {
@@ -12,4 +13,44 @@
 }
 body {
   background-color: rgb(233, 214, 214);
+  background-image: url("/img/b2.jpg");
 }
+.take {
+  font-size: 22rem;
+  border: 2px solid red;
+}
+#display,
+#hdr {
+  position: relative;
+}
+#display {
+  /* position: absolute; */
+  border: 1px solid rgb(211, 206, 206);
+  position: absolute;
+  border-radius: 2rem;
+  padding: 0 2rem 25rem 0;
+  margin-left: 22rem;
+  /* margin-bottom: 6rem; */
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  top: 13rem;
+  background-color: rgba(255, 0, 0, 0.329);
+}
+#gurukul {
+  position: absolute;
+  left: 50rem;
+  bottom: 7rem;
+}
+
+/* info  */
+/* .blc1 {
+  font-size: 2rem;
+}
+.txt {
+  position: absolute;
+  margin-top: 22rem 0;
+  font-size: 3rem;
+}
+.top1 {
+  position: relative;
+} */
