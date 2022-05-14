@@ -1,17 +1,20 @@
 .nav {
   display: flex;
   justify-content: center;
-  border-radius: 5rem;
-  margin: 3rem 65rem;
-  padding: 20rem 20rem 20rem 20rem;
-  /* background-color: #eaedef; */
-  background-image: url("/img/b1.jpg");
+  border-radius: 1rem;
+  margin: 7rem 92rem 0 10rem;
+  padding: 30rem 10rem 10rem 20rem;
+  background-color: rgb(32, 21, 21);
+  /* background-color: aliceblue; */
+  /* background-image: url(); */
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .st1 {
   margin: 2rem;
 }
 body {
+  /* margin: 100%; */
+  /* margin: 100vw; */
   background-color: rgb(233, 214, 214);
   background-image: url("/img/b2.jpg");
 }
@@ -19,18 +22,16 @@ body {
   font-size: 22rem;
   border: 2px solid red;
 }
-#display,
-#hdr {
+#display {
   position: relative;
 }
 #display {
-  /* position: absolute; */
   border: 1px solid rgb(211, 206, 206);
   position: absolute;
   border-radius: 2rem;
   padding: 0 2rem 25rem 0;
-  margin-left: 22rem;
-  /* margin-bottom: 6rem; */
+  margin-left: 60rem;
+  margin-bottom: 2rem;
   text-align: center;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   top: 13rem;
@@ -41,16 +42,145 @@ body {
   left: 50rem;
   bottom: 7rem;
 }
-
-/* info  */
-/* .blc1 {
-  font-size: 2rem;
-}
-.txt {
+/* new  */
+.info {
   position: absolute;
-  margin-top: 22rem 0;
-  font-size: 3rem;
+  color: white;
+  font-size: 2rem;
+  margin-top: -28rem;
+  margin-left: -4rem;
 }
 .top1 {
-  position: relative;
-} */
+  margin-right: 12rem;
+}
+.naam {
+  position: absolute;
+  top: 11rem;
+  left: 13rem;
+  font-size: 2rem;
+  color: white;
+}
+
+.take1 {
+  position: absolute;
+  top: 16rem;
+}
+.take1 input {
+  position: absolute;
+  width: 25rem;
+  border-radius: 1rem;
+  padding-bottom: 0.7rem;
+  left: -8rem;
+  font-size: 1.5rem;
+}
+
+.take1 input:hover {
+  background-color: rgb(223, 210, 210);
+}
+.take2 input:hover {
+  background-color: rgb(223, 210, 210);
+}
+.take3 input:hover {
+  background-color: rgb(223, 210, 210);
+}
+
+/* 1cmplt */
+
+.roolnumber {
+  position: absolute;
+  top: 20rem;
+  color: white;
+  font-size: 1.7rem;
+  left: 13rem;
+}
+.take2 {
+  position: absolute;
+  top: 23rem;
+}
+.take2 input {
+  position: absolute;
+  width: 25rem;
+  border-radius: 1rem;
+  padding-bottom: 0.7rem;
+  left: -8rem;
+  font-size: 1.5rem;
+}
+
+/* 2nd done */
+.subject1 {
+  position: absolute;
+  top: 27rem;
+  font-size: 2rem;
+  color: white;
+  left: 13rem;
+}
+.take3 {
+  position: absolute;
+  top: 30rem;
+}
+.take3 input {
+  position: absolute;
+  width: 25rem;
+  border-radius: 1rem;
+  padding-bottom: 0.7rem;
+  left: -8rem;
+  font-size: 1.5rem;
+}
+
+/* done  */
+.strg {
+  position: absolute;
+  top: 34rem;
+  left: 21.5rem;
+  font-size: 2rem;
+  color: white;
+}
+.slct {
+  width: 7rem;
+  padding: 1rem 1rem 1rem 1rem;
+  border-radius: 0.8rem;
+}
+.slct:hover {
+  background-color: rgb(212, 198, 198);
+}
+
+.sub {
+  position: absolute;
+  /* width: 22rem; */
+  left: 18rem;
+  top: 42rem;
+}
+.inp {
+  padding: 1rem 5rem;
+  border-radius: 2rem;
+  background-color: blue;
+  font-size: 1rem;
+  /* color: white; */
+}
+.inp:hover {
+  background-color: red;
+}
+.img {
+  position: absolute;
+  width: 4rem;
+  top: 8.7rem;
+  left: 12rem;
+  border-radius: 2rem;
+}
+
+/* button  */
+.btn {
+  border-radius: 1rem;
+  font-size: 1rem;
+  background: none;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: rgb(211, 204, 204);
+  border-radius: 1rem;
+}
+.delt {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
