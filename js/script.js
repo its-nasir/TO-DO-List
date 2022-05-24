@@ -10,6 +10,63 @@ var step = 1;
 var allData = [];
 var allDataS = [];
 var allCookies = [];
+// console.log(allCookies);
+
+let editEyer = [];
+function editData() {
+  console.log(this.id.split(","));
+  const listOfIds = this.id.split(",")[0].split("|");
+  console.log(listOfIds);
+
+  var sel = document.querySelector("select").selectedOptions;
+
+  if (listOfIds[0] === "local") {
+    const localC = JSON.parse(window.localStorage.getItem("data"));
+    document.getElementById("name").value =
+      localC[Number(listOfIds[2])]["Name"];
+    document.getElementById("roll").value =
+      localC[Number(listOfIds[2])]["roll"];
+    document.getElementById("subj").value =
+      localC[Number(listOfIds[2])]["subject"];
+
+    sel[0].innerHTML = "Local Storage";
+    editEyer.push(Number(listOfIds[2]));
+    localC.splice(Number(listOfIds[2]), 1);
+    window.localStorage.setItem("data", JSON.stringify(localC));
+  } else if (listOfIds[0] === "session") {
+    const sessionC = JSON.parse(window.sessionStorage.getItem("data"));
+
+    document.getElementById("name").value =
+      sessionC[Number(listOfIds[2])]["Name"];
+    document.getElementById("roll").value =
+      sessionC[Number(listOfIds[2])]["roll"];
+    document.getElementById("subj").value =
+      sessionC[Number(listOfIds[2])]["subject"];
+
+    sel[0].innerHTML = "Session Storage";
+    editEyer.push(Number(listOfIds[2]));
+    sessionC.splice(Number(listOfIds[2]), 1);
+    window.sessionStorage.setItem("data", JSON.stringify(sessionC));
+  } else {
+    const cookieC = JSON.parse(document.cookie.split("=")[1]);
+
+    document.getElementById("name").value =
+      cookieC[Number(listOfIds[2])]["Name"];
+    document.getElementById("roll").value =
+      cookieC[Number(listOfIds[2])]["roll"];
+    document.getElementById("subj").value =
+      cookieC[Number(listOfIds[2])]["subject"];
+
+    sel[0].innerHTML = "Cookie Storage";
+    editEyer.push(Number(listOfIds[2]));
+    cookieC.splice(Number(listOfIds[2]), 1);
+    document.cookie = "data" + "=" + JSON.stringify(cookieC);
+    if (cookieC.length === 0) {
+      location.reload();
+      document.cookie.clear();
+    }
+  }
+}
 
 function delData(e) {
   console.log(this.id.split(","));
@@ -42,11 +99,15 @@ function delData(e) {
 
 let count2;
 console.log(window.localStorage.length);
-
 if (window.localStorage.length > 0) {
   count2 = 0;
   table.style.display = "block";
   for (let i of JSON.parse(window.localStorage.getItem("data"))) {
+    const eiditTag = document.createElement("button");
+    eiditTag.innerHTML = "edit";
+    eiditTag.setAttribute("id", `local|${i["count"]}|${count2}`);
+    eiditTag.setAttribute("class", "btn");
+
     const deleTag = document.createElement("button");
     deleTag.innerHTML = "delete";
     deleTag.setAttribute("id", `local|${i["count"]}|${count2}`);
@@ -58,13 +119,16 @@ if (window.localStorage.length > 0) {
     var cell3 = newRow.insertCell(2);
     var cell4 = newRow.insertCell(3);
     var cell5 = newRow.insertCell(4);
+    var cell6 = newRow.insertCell(5);
 
     cell1.innerHTML = i["Name"];
     cell2.innerHTML = i["roll"];
     cell3.innerHTML = i["subject"];
     cell4.innerHTML = i["Storage"];
     cell5.append(deleTag);
+    cell6.append(eiditTag);
     deleTag.addEventListener("click", delData);
+    eiditTag.addEventListener("click", editData);
     count2++;
     step++;
   }
@@ -74,6 +138,11 @@ if (window.sessionStorage.length > 1) {
   count2 = 0;
   table.style.display = "block";
   for (let i of JSON.parse(window.sessionStorage.getItem("data"))) {
+    const eiditTag = document.createElement("button");
+    eiditTag.innerHTML = "edit";
+    eiditTag.setAttribute("id", `session|${i["count"]}|${count2}`);
+    eiditTag.setAttribute("class", "btn");
+
     const deleTag = document.createElement("button");
     deleTag.innerHTML = "delete";
     deleTag.setAttribute("id", `session|${i["count"]}|${count2}`);
@@ -85,13 +154,16 @@ if (window.sessionStorage.length > 1) {
     var cell3 = newRow.insertCell(2);
     var cell4 = newRow.insertCell(3);
     var cell5 = newRow.insertCell(4);
+    var cell6 = newRow.insertCell(5);
 
     cell1.innerHTML = i["Name"];
     cell2.innerHTML = i["roll"];
     cell3.innerHTML = i["subject"];
     cell4.innerHTML = i["Storage"];
     cell5.append(deleTag);
+    cell6.append(eiditTag);
     deleTag.addEventListener("click", delData);
+    eiditTag.addEventListener("click", editData);
     count2++;
     step++;
   }
@@ -101,6 +173,11 @@ if (document.cookie) {
   count2 = 0;
   table.style.display = "block";
   for (let i of JSON.parse(document.cookie.split("=")[1])) {
+    const eiditTag = document.createElement("button");
+    eiditTag.innerHTML = "edit";
+    eiditTag.setAttribute("id", `cookie|${i["count"]}|${count2}`);
+    eiditTag.setAttribute("class", "btn");
+
     const deleTag = document.createElement("button");
     deleTag.innerHTML = "delete";
     deleTag.setAttribute("id", `cookie|${i["count"]}|${count2}`);
@@ -112,13 +189,16 @@ if (document.cookie) {
     var cell3 = newRow.insertCell(2);
     var cell4 = newRow.insertCell(3);
     var cell5 = newRow.insertCell(4);
+    var cell6 = newRow.insertCell(5);
 
     cell1.innerHTML = i["Name"];
     cell2.innerHTML = i["roll"];
     cell3.innerHTML = i["subject"];
     cell4.innerHTML = i["Storage"];
     cell5.append(deleTag);
+    cell6.append(eiditTag);
     deleTag.addEventListener("click", delData);
+    eiditTag.addEventListener("click", editData);
     count2++;
     step++;
   }
@@ -170,21 +250,31 @@ function displayDetails(e) {
     return sign;
   }
 
-  if (sel[0].innerText == "Local storage") {
+  if (sel[0].innerText == "Local Storage") {
     if (window.localStorage.length > 0) {
       allData = JSON.parse(localStorage.getItem("data"));
     }
     sign = checker();
     console.log(sign, "innner...");
     if (sign) {
-      console.log("1st cond");
-      allData.push({
-        Name,
-        roll,
-        subject,
-        Storage: "Local storage",
-        count,
-      });
+      if (editEyer.length > 0) {
+        allData.splice(editEyer[0], 0, {
+          Name,
+          roll,
+          subject,
+          Storage: "Local storage",
+          count,
+        });
+      } else {
+        console.log("1st cond");
+        allData.push({
+          Name,
+          roll,
+          subject,
+          Storage: "Local storage",
+          count,
+        });
+      }
       window.localStorage.setItem("data", JSON.stringify(allData));
       console.log(window.localStorage);
     }
@@ -199,13 +289,23 @@ function displayDetails(e) {
     sign = checker();
 
     if (sign) {
-      allCookies.push({
-        Name,
-        roll,
-        subject,
-        Storage: "Cookie Storage",
-        count,
-      });
+      if (editEyer.length > 0) {
+        allCookies.splice(editEyer[0], 0, {
+          Name,
+          roll,
+          subject,
+          Storage: "Cookie Storage",
+          count,
+        });
+      } else {
+        allCookies.push({
+          Name,
+          roll,
+          subject,
+          Storage: "Cookie Storage",
+          count,
+        });
+      }
 
       document.cookie = "data" + "=" + JSON.stringify(allCookies);
     }
@@ -219,14 +319,25 @@ function displayDetails(e) {
     sign = checker();
 
     if (sign) {
-      allDataS.push({
-        Name,
-        roll,
-        subject,
-        btnDel,
-        Storage: "Session Storage",
-        count,
-      });
+      if (editEyer.length > 0) {
+        allDataS.splice(editEyer[0], 0, {
+          Name,
+          roll,
+          subject,
+          btnDel,
+          Storage: "Session Storage",
+          count,
+        });
+      } else {
+        allDataS.push({
+          Name,
+          roll,
+          subject,
+          btnDel,
+          Storage: "Session Storage",
+          count,
+        });
+      }
       window.sessionStorage.setItem("data", JSON.stringify(allDataS));
     }
   }
@@ -259,6 +370,7 @@ function displayDetails(e) {
   var cell3 = newRow.insertCell(2);
   var cell4 = newRow.insertCell(3);
   var cell5 = newRow.insertCell(4);
+  var cell6 = newRow.insertCell(5);
 
   cell1.innerHTML = name;
   cell2.innerHTML = roll;

@@ -1,97 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" href="./css/style.css">
-<link rel="icon" type="image/png" sizes="32x32" href="./img/icon.jpg">
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./img/icon.jpg" />
 
-<head>
-
-
-
-
-
-
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Primary Meta Tags -->
     <title>Students Form</title>
-    <meta name="title" content="Students Form">
-    <meta name="description" content="In this form we are using javascript/Html/CSS with local,session,cookie storage.">
+    <meta name="title" content="Students Form" />
+    <meta
+      name="description"
+      content="In this form we are using javascript/Html/CSS with local,session,cookie storage."
+    />
 
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://metatags.io/">
-    <meta property="og:title" content="Students Form">
-    <meta property="og:description"
-        content="In this form we are using javascript/Html/CSS with local,session,cookie storage.">
-    <meta property="og:image" content="https://i.postimg.cc/SJy1tNxr/icon.jpg">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://metatags.io/" />
+    <meta property="og:title" content="Students Form" />
+    <meta
+      property="og:description"
+      content="In this form we are using javascript/Html/CSS with local,session,cookie storage."
+    />
+    <meta
+      property="og:image"
+      content="https://i.postimg.cc/SJy1tNxr/icon.jpg"
+    />
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://metatags.io/">
-    <meta property="twitter:title" content="Students Form">
-    <meta property="twitter:description"
-        content="In this form we are using javascript/Html/CSS with local,session,cookie storage.">
-    <meta property="twitter:image" content="https://i.postimg.cc/SJy1tNxr/icon.jpg">
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://metatags.io/" />
+    <meta property="twitter:title" content="Students Form" />
+    <meta
+      property="twitter:description"
+      content="In this form we are using javascript/Html/CSS with local,session,cookie storage."
+    />
+    <meta
+      property="twitter:image"
+      content="https://i.postimg.cc/SJy1tNxr/icon.jpg"
+    />
     <title>Form Page</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <section class="nav">
-        <div onsubmit="nav(event)">
-            <div class="top1">
-                <div>
-                    <img class="img" src="./img/form1.jpg" alt="">
+      <div onsubmit="nav(event)">
+        <div class="top1">
+          <div>
+            <img class="img" src="./img/form1.jpg" alt="" />
 
-                    <h4 class="info"> Persional Information</h4>
-                </div>
-                <div>
-                    <p class="naam"> Name :</p>
-                    <div class="take1"><input id="name" type="text"></div>
-                </div>
-                <div>
-                    <div class="roolnumber">RollNO. :</div>
-                    <div class="take2"><input id="roll" type="number"></div>
-                </div>
-                <div>
-                    <div class="subject1">Subject :</div>
-                    <div class="take3"><input id="subj" type="subject"></div>
-                </div>
+            <h4 class="info">Persional Information</h4>
+          </div>
+          <div>
+            <p class="naam">Name :</p>
+            <div class="take1"><input id="name" type="text" /></div>
+          </div>
+          <div>
+            <div class="roolnumber">RollNO. :</div>
+            <div class="take2"><input id="roll" type="number" /></div>
+          </div>
+          <div>
+            <div class="subject1">Subject :</div>
+            <div class="take3"><input id="subj" type="subject" /></div>
+          </div>
 
-
-
-                <div>
-                    <div class="strg" id="storage1">Stroage:</div>
-                    <div>
-                        <select class="slct">
-                            <option value="">Select</option>
-                            <option id="touch1" value="local storage">Local storage</option>
-                            <option id="touch2">Cookie Storage</option>
-                            <option id="touch3">Session Storage</option>
-                        </select>
-                    </div>
-                </div>
-                <div>
-                    <div class="sub"><input class="inp" id="entry" type="submit" value="Submit"></div>
-                </div>
+          <div>
+            <div class="strg" id="storage1">Stroage:</div>
+            <div>
+              <select class="slct">
+                <option value="">Select</option>
+                <option id="touch1" value="local storage">Local Storage</option>
+                <option id="touch2">Cookie Storage</option>
+                <option id="touch3">Session Storage</option>
+              </select>
             </div>
+          </div>
+
+          <div>
+            <div class="sub">
+              <input class="inp" id="entry" type="submit" value="Submit" />
+            </div>
+          </div>
         </div>
+      </div>
     </section>
     <table id="display">
-        <tr id="fortop">
-            <th id="user" style="padding: 2rem 2rem;"> Name</th>
-            <th id="roll_num" style="padding: 0 2rem">RollNO</th>
-            <th style="padding: 0 2rem;">Subject</th>
-            <th style="padding: 0 2rem;">Storage</th>
-            <th>Delete</th>
-            <th class="delt"><button id="btnDel" class="btn">Delete</button></th>
-            <th><button id="btn-edit" class="">Edit</button></th>
-
-        </tr>
+      <tr id="fortop">
+        <th id="user" style="padding: 2rem 2rem">Name</th>
+        <th id="roll_num" style="padding: 0 2rem">RollNO</th>
+        <th style="padding: 0 2rem">Subject</th>
+        <th style="padding: 0 2rem">Storage</th>
+        <th>Delete</th>
+        <th class="delt"><button id="btnDel" class="btn">Delete</button></th>
+        <th>Edit</th>
+        <th><button id="btn-edit" class="delt edit btn1">Edit</button></th>
+      </tr>
     </table>
     <script src="./js/script.js"></script>
     <!-- <script src="./js/extra.js"></script> -->
-</body>
-
+  </body>
 </html>

@@ -13,8 +13,6 @@
   margin: 2rem;
 }
 body {
-  /* margin: 100%; */
-  /* margin: 100vw; */
   background-color: rgb(233, 214, 214);
   background-image: url("/img/b2.jpg");
 }
@@ -183,4 +181,8 @@ body {
   position: absolute;
   top: -9999px;
   left: -9999px;
+}
+
+.edit1 {
+  border: 2px solid black;
 }
